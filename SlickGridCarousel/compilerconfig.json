@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "App_Plugins/SlickCarousel/SlickGallery.css",
+    "inputFile": "App_Plugins/SlickCarousel/SlickGallery.scss"
+  },
+  {
+    "outputFile": "Content/Sass/Components/slick-theme.css",
+    "inputFile": "Content/Sass/Components/slick-theme.scss"
+  },
+  {
+    "outputFile": "Content/Sass/Components/slick.css",
+    "inputFile": "Content/Sass/Components/slick.scss"
+  },
+  {
+    "outputFile": "Content/Sass/Components/Slick-View-Custom.css",
+    "inputFile": "Content/Sass/Components/Slick-View-Custom.scss"
+  }
+]

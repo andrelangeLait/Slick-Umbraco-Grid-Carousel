@@ -1,0 +1,132 @@
+﻿// Umbraco Backend styling for Slick Gallery Carousel.
+
+.slickWrapper {
+    .emptySlickContent {
+        .slick-content {
+            width: 100%;
+            float: left;
+        }
+
+        .slickControl {
+            width: 100%;
+            float: left;
+        }
+    }
+
+    .fullSlickContent {
+        .slick-content {
+            width: 65%;
+            float: left;
+
+            .slick-content-thumbnails {
+                max-height: 300px;
+                overflow-y: scroll;
+
+                img {
+                    max-width: 140px;
+                    max-height: 100px;
+                    margin: 10px;
+                    box-shadow: 0 0 15px #6F7272;
+                }
+            }
+        }
+
+        .slickControl {
+            width: 35%;
+            float: left;
+
+            .slickControls {
+                padding: 10px;
+
+                .slickControlInput {
+                    margin-top: 10px;
+
+                    label[for=slickplayspeed] {
+                        font-size: 18px;
+                        text-shadow: 0 0 9px rgba(0,0,0,0.4);
+                    }
+
+                    input[type=number] {
+                        border: none;
+                        box-shadow: 0 0 2px #4f545b;
+                        max-width: 100%;
+                    }
+                    /* functionality */
+                    input[type="checkbox"].graphic {
+                        display: none;
+                    }
+
+                    input[type="checkbox"].graphic + label,
+                    input[type="checkbox"].graphic + label > .flag {
+                        padding: 0;
+                        display: inline-block;
+                    }
+
+                    input[type="checkbox"].graphic + label {
+                        position: relative;
+                        font-size: 18px;
+                        text-shadow: 0 0 9px rgba(0,0,0,0.4);
+                    }
+
+                    input[type="checkbox"].graphic + label > .flag {
+                        position: absolute;
+                        right: 0;
+                        /* style */
+                        width: 30px;
+                        left: 100px;
+                        top: -15px;
+                        bottom: -15px;
+                    }
+                    /* checked state indicator images */
+                    input[type="checkbox"].graphic + label > .flag {
+                        background-repeat: no-repeat;
+                        background-position: 0px 50%;
+                        content: '';
+                        z-index: 2;
+                        transform: scale(1) rotate(0deg);
+                    }
+
+                    input[type="checkbox"].graphic:checked + label > .flag,
+                    input[type="checkbox"].graphic + label:active > .flag {
+                        background-image: url('img/tick.png');
+                        transform: scale(0.9) rotate(360deg);
+                        background-size: 30px;
+                    }
+
+                    input[type="checkbox"].graphic + label > .flag,
+                    input[type="checkbox"].graphic:checked + label:active > .flag {
+                        background-image: url('img/cross.png');
+                        transform: scale(0.9) rotate(0deg);
+                        background-size: 30px;
+                    }
+                    /* animation */
+                    input[type="checkbox"].graphic + label > .flag {
+                    }
+
+                    input[type="checkbox"].graphic + label > .flag {
+                        transition: all 0.5s cubic-bezier(1.000, -0.360, 0.000, 1.385); /* custom */
+                        transition-timing-function: cubic-bezier(1.000, -0.360, 0.000, 1.385); /* custom */
+                    }
+                }
+            }
+        }
+    }
+
+    .fullSlickContent .slickControl, .emptySlickContent .slickControl {
+        .umb-mediapicker {
+            ul {
+                width: 100%;
+
+                li {
+                    left: 50%;
+                    transform: translate(-50%, 0);
+
+                    a {
+                        height: 100px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

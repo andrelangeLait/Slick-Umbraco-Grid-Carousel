@@ -1,0 +1,59 @@
+﻿<div data-ng-controller="SlickGalleryController">
+    <div class="slickWrapper">
+        <h1 class="text-center">Billed Karousel</h1>
+
+        <div class="emptySlickContent" ng-if="!control.Album">
+            <div class="slick-content">
+
+                <p class="text-center">Tilføj et album og billed slider vil blive genereret.</p>
+            </div>
+            <div class="slickControl">
+                <div class="umb-editor umb-mediapicker ng-scope">
+                    <ul class="umb-sortable-thumbnails ng-scope">
+                        <li>
+                            <a class="add-link" ng-click="openMediaPicker()" prevent-default><i class="icon icon-add large"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fullSlickContent" ng-if="control.Album">
+            <div class="slick-content">
+                <div class="slick-content-thumbnails">
+                    <!--ng-repeat-->
+                    <img ng-repeat="url in thumbnails" ng-src="{{url}}?height=100&width=140&quality=25" />
+                </div>
+            </div>
+            <div class="slickControl">
+                <div class="umb-editor umb-mediapicker ng-scope">
+                    <ul class="umb-sortable-thumbnails ng-scope">
+                        <li>
+                            <p>Vælg Nyt album:</p>
+                            <a class="add-link" ng-click="openMediaPicker()" prevent-default><i class="icon icon-add large"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="slickControls">
+                    <p class="text-center">Settings:</p>
+                    <div class="slickControlInput">
+                        <input type="checkbox" id="autoPlay{{control.SlickID}}" class="graphic" ng-model="control.AutoPlay" ng-click="setPlaySpeed()" />
+                        <label for="autoPlay{{control.SlickID}}">
+                            <span class="flag"></span>Auto Play:
+                        </label>
+                    </div>
+                    <div class="slickControlInput" ng-if="control.AutoPlay">
+                        <label for="slickplayspeed{{control.SlickID}}">Play Speed: <small>in ms</small></label>
+                        <input type="number" ng-model="control.PlaySpeed" id="slickplayspeed{{control.SlickID}}" />
+                    </div>
+                    <div class="slickControlInput" >
+                        <input type="checkbox" id="showNav{{control.SlickID}}" class="graphic" ng-model="control.ShowNav"/>
+                        <label for="showNav{{control.SlickID}}">
+                            <span class="flag"></span>Show Nav:
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

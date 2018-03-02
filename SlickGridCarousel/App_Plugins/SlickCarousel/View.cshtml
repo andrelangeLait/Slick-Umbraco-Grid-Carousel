@@ -1,0 +1,44 @@
+﻿@using System.Web.Mvc
+@using System.Web.WebPages.Razor
+@using System.Web.Mvc.Html
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@{
+
+}
+
+<!--Render view for slick carousel here.-->
+@if (Model.Album != null)
+{
+    int PlaySpeed = Model.PlaySpeed > 0 ? Model.PlaySpeed : 0;
+    bool AutoPlay = Model.AutoPlay == true ? Model.AutoPlay : false;
+
+    <div class="SlickGridCarousel col-xs-12" data-uniqueID="@Model.SlickID" data-slickPlaySpeed="@PlaySpeed" data-slickAutoPlay="@AutoPlay" data-showNav="@Model.ShowNav" @*data-showDots="@Model.ShowDots"*@>
+        <div class="slider slider-for">
+            @{
+                var folder = Umbraco.TypedMedia(Model.Album.ToString());
+
+                foreach (var item in folder.Children)
+                {
+                    <div class="slick-slider-main">
+                        <!--single slide-->
+                        <img src="@item.Url?width=1100&height450&quality=100" alt="" />
+                    </div>
+                }
+            }
+        </div>
+        @if (Model.ShowNav == "True")
+        {
+            <div class="slider slider-nav" >
+                @{
+                    foreach (var item in folder.Children)
+                    {
+                        <div class="slick-nav-thumbnail">
+                            <!--single slide thumbnail-->
+                            <img src="@item.Url?width=500&quality=50" alt="" />
+                        </div>
+                    }
+                }
+            </div>
+        }
+    </div>
+}

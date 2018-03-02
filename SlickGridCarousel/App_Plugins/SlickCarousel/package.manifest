@@ -1,0 +1,18 @@
+﻿{
+  "propertyEditors": [
+    {
+      "id": "92a97413-7ck3-4285-91g1-2cd83d912fh7",
+      "alias": "%SolutionName%.BilledKarousel",
+      "name": "Billed Karousel",
+      "valueType": "JSON",
+      "editor": {
+        "view": "~/App_Plugins/SlickGallery/editor.html",
+        "valueType": "JSON"
+      }
+    }
+  ],
+  "javascript": [
+    "/App_Plugins/SlickCarousel/SlickGalleryController.js",
+    "/App_Plugins/SlickCarousel/SlickGallerydirective.js"
+  ]
+}
