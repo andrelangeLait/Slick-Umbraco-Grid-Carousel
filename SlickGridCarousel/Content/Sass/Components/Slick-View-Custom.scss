@@ -5,6 +5,7 @@
         .slick-slider-main {
             margin-bottom: 10px;
             height: 450px;
+            background-size: cover;
 
             @media screen and (max-width:994px) {
                 height: 350px;
@@ -17,11 +18,6 @@
             @media screen and (max-width:480px) {
                 height: 200px;
             }
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
         }
     }
 
@@ -29,6 +25,9 @@
         .slick-nav-thumbnail {
             padding: 5px 7px;
             height: 150px;
+            background-size: cover;
+            border-radius: 3px;
+            margin: 5px 7px;
 
             @media screen and (max-width:620px) {
                 height: 100px;
@@ -42,14 +41,8 @@
                 outline: 0;
             }
 
-            img {
-                height: 100%;
-                width: 100%;
-                border-radius: 3px;
-
-                &:hover {
-                    box-shadow: 0 0 2px black;
-                }
+            &:hover {
+                box-shadow: 0 0 2px black;
             }
         }
     }

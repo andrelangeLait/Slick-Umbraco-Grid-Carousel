@@ -19,9 +19,9 @@
 
                 foreach (var item in folder.Children)
                 {
-                    <div class="slick-slider-main">
+                    <div class="slick-slider-main" style="background-image:url('@item.Url?width=1100&height450&quality=100')">
                         <!--single slide-->
-                        <img src="@item.Url?width=1100&height450&quality=100" alt="" />
+                        @*<img src="@item.Url?width=1100&height450&quality=100" alt="" />*@
                     </div>
                 }
             }
@@ -32,9 +32,9 @@
                 @{
                     foreach (var item in folder.Children)
                     {
-                        <div class="slick-nav-thumbnail">
+                        <div class="slick-nav-thumbnail" style="background-image:url('@item.Url?width=500&quality=50')">
                             <!--single slide thumbnail-->
-                            <img src="@item.Url?width=500&quality=50" alt="" />
+                            @*<img src="@item.Url?width=500&quality=50" alt="" />*@
                         </div>
                     }
                 }
